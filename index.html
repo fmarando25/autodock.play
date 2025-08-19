@@ -1,100 +1,375 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoDock</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            background-color: #f4f6f8;
-        }
-        header {
-            background-color: #002244;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        header img {
-            width: 100px;
-            display: block;
-            margin: 0 auto 10px;
-        }
-        main {
-            max-width: 900px;
-            margin: 40px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #002244;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #002244;
-            color: white;
-        }
-        section {
-            margin-bottom: 40px;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AutoDock — Park. Charge. Play.</title>
+  <meta name="description" content="AutoDock is a smart docking station that automatically charges kids' ride‑on cars and small EVs. Park. Charge. Play." />
+  <meta property="og:title" content="AutoDock — Park. Charge. Play." />
+  <meta property="og:description" content="Smart, safe, and seamless charging for ride‑on cars and more." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <!-- Tailwind CDN (no build needed) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: '#0ea5e9', dark: '#0284c7', light: '#38bdf8' }, accent: '#22c55e' } } } }</script>
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    .glass { backdrop-filter: blur(10px); background: rgba(15, 23, 42, 0.6); }
+  </style>
 </head>
-<body>
-    <header>
-        <img src="autodock-logo.jpg" alt="AutoDock Logo">
-        <h1>Welcome to AutoDock</h1>
-        <p>Smart. Safe. Seamless Charging for Power Toys & Beyond</p>
-    </header>
-    <main>
-        <section>
-            <h2>What is AutoDock?</h2>
-            <p>AutoDock is the future of hands-free charging — made for kids’ ride-on cars, golf carts, snowblowers, and more. Whether at home or at a commercial site, our innovative docking system automatically charges your vehicle when it's parked. It's as simple as drive, dock, and go.</p>
-        </section>
-        <section>
-            <h2>Why Families & Businesses Trust Us:</h2>
-            <ul>
-                <li>✅ No more cords, plugs, or forgetting to charge</li>
-                <li>✅ Works with most Power Wheels and electric vehicles</li>
-                <li>✅ Makes a perfect bundle gift for the holidays</li>
-                <li>✅ Designed for garages, golf courses, and tool sheds</li>
-                <li>✅ Built by real engineers — and parents — who care about safety</li>
-            </ul>
-        </section>
-        <section>
-            <h2>How It Works</h2>
-            <p>AutoDock uses conductive aluminum plates and smart relays to automatically connect power to your ride-on vehicle. When your car docks into place, the plates align and power is delivered safely to recharge the battery—without needing to plug anything in.</p>
-        </section>
-        <section>
-            <h2>FAQ</h2>
-            <ul>
-                <li><strong>Is it safe for kids?</strong> Absolutely. AutoDock is designed with multiple safety layers, using low-voltage DC connections and isolated control logic.</li>
-                <li><strong>What voltages does it support?</strong> 6V, 12V, 24V, and 48V systems with proper regulation.</li>
-                <li><strong>Does it work with all ride-on cars?</strong> AutoDock is compatible with most models, including John Deere, Jeep, and custom builds.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>About the Creator</h2>
-            <p>Hi, I'm Francesco. I'm an automation engineer and a dad. This project started when I wanted a safe, simple way for my son to charge his ride-on car without unplugging or dealing with wires. After years of working in robotics and electrical design, I decided to build something that could help other families and businesses too — and AutoDock was born.</p>
-        </section>
-    </main>
-    <footer>
-        &copy; 2025 AutoDock. All rights reserved.
-    </footer>
+<body class="bg-slate-950 text-slate-100 selection:bg-brand/30">
+  <!-- Announcement bar -->
+  <div class="text-center text-sm bg-brand/10 border-b border-white/10 py-2">Serving NJ/NYC — <a class="underline decoration-brand hover:text-brand" href="#contact">Book a demo</a></div>
 
-<section id="signup" style="padding: 3rem 1rem;">
-  <h2>Sign Up for Updates</h2>
-  <p>Want to stay in the loop? Fill out the form below:</p>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSec20gYLaPM7V0vA7RbJtqDLOlJcmMKakNFsB1qXYwvttS5XQ/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-</section>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 glass border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#home" class="flex items-center gap-3 group" aria-label="AutoDock home">
+          <!-- Simple logo mark -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+            <rect x="3" y="7" width="18" height="10" rx="2" class="fill-brand/20 stroke-brand" stroke-width="1.5"/>
+            <path d="M8 12h8" stroke="currentColor" stroke-width="1.5" class="text-brand"/>
+            <circle cx="12" cy="12" r="3" class="fill-brand/40"/>
+          </svg>
+          <span class="text-lg font-semibold tracking-tight">AutoDock</span>
+        </a>
 
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a class="hover:text-brand" href="#features">Features</a>
+          <a class="hover:text-brand" href="#how">How it Works</a>
+          <a class="hover:text-brand" href="#portfolio">Gallery</a>
+          <a class="hover:text-brand" href="#pricing">Pricing</a>
+          <a class="hover:text-brand" href="#faq">FAQ</a>
+          <a class="hover:text-brand" href="#contact">Contact</a>
+        </nav>
+
+        <div class="hidden md:block">
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2 font-semibold text-slate-950 shadow hover:bg-brand-light transition">Get AutoDock</a>
+        </div>
+
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg p-2 hover:bg-white/10" aria-label="Open menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile nav -->
+    <div id="mobileNav" class="md:hidden hidden border-t border-white/10">
+      <nav class="px-4 py-3 space-y-2 text-sm">
+        <a class="block py-2 hover:text-brand" href="#features">Features</a>
+        <a class="block py-2 hover:text-brand" href="#how">How it Works</a>
+        <a class="block py-2 hover:text-brand" href="#portfolio">Gallery</a>
+        <a class="block py-2 hover:text-brand" href="#pricing">Pricing</a>
+        <a class="block py-2 hover:text-brand" href="#faq">FAQ</a>
+        <a class="block py-2 hover:text-brand" href="#contact">Contact</a>
+        <a class="block mt-2 rounded-xl bg-brand px-4 py-2 font-semibold text-slate-950 shadow hover:bg-brand-light" href="#contact">Get AutoDock</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative overflow-clip">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-[radial-gradient(40%_60%_at_70%_-20%,rgba(56,189,248,0.25),transparent_60%),radial-gradient(30%_40%_at_0%_0%,rgba(34,197,94,0.15),transparent_60%)]"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">Park. Charge. <span class="text-brand">Play.</span></h1>
+          <p class="mt-6 text-lg text-slate-300 max-w-xl">AutoDock is a drop‑in smart charging dock for kids' ride‑on cars (and more). Just park to start charging — no plugs, no tantrums, always ready.</p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#contact" class="rounded-xl bg-brand px-5 py-3 font-semibold text-slate-950 shadow hover:bg-brand-light">Get a Quote</a>
+            <a href="#features" class="rounded-xl px-5 py-3 font-semibold border border-white/10 hover:border-brand/60">Explore Features</a>
+          </div>
+          <div class="mt-6 text-sm text-slate-400">Serving NJ/NYC • Install in under 30 minutes • Child‑safe low voltage</div>
+        </div>
+        <div class="relative">
+          <div class="aspect-video rounded-2xl border border-white/10 bg-gradient-to-tr from-slate-800 to-slate-900 shadow-2xl flex items-center justify-center">
+            <div class="text-center p-8">
+              <div class="text-xs uppercase tracking-widest text-slate-400">Product mock</div>
+              <svg width="280" height="120" viewBox="0 0 560 240" class="mx-auto my-4">
+                <rect x="30" y="60" width="500" height="120" rx="20" fill="#0ea5e930" stroke="#0ea5e9" stroke-width="3"></rect>
+                <circle cx="120" cy="120" r="28" fill="#22c55e55" stroke="#22c55e" stroke-width="3"></circle>
+                <circle cx="440" cy="120" r="28" fill="#22c55e55" stroke="#22c55e" stroke-width="3"></circle>
+                <rect x="260" y="90" width="40" height="60" rx="8" fill="#38bdf855"></rect>
+              </svg>
+              <p class="text-slate-300">Universal floor dock with status LEDs and spring‑loaded contacts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services / Features (mirrors printlabnj structure) -->
+  <section id="features" class="py-20 lg:py-24 border-t border-white/10 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl sm:text-4xl font-bold">Our Features</h2>
+        <p class="mt-3 text-slate-300">Designed for families, ready for pros. High‑quality components, built‑in safety, and seamless charging.</p>
+      </div>
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Card -->
+        <div class="rounded-2xl border border-white/10 bg-slate-900 p-6 hover:border-brand/50 transition">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand/15 ring-1 ring-brand/40">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M5 7h14"/></svg>
+            </span>
+            <h3 class="font-semibold">Auto‑Start Charging</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-300">No cords to plug in. Vehicle contacts the dock and charging starts automatically.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-slate-900 p-6 hover:border-brand/50 transition">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand/15 ring-1 ring-brand/40">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M12 4v16"/></svg>
+            </span>
+            <h3 class="font-semibold">Universal Adapter</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-300">Works with most ride‑on cars. Optional brackets for odd undercarriages.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-slate-900 p-6 hover:border-brand/50 transition">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand/15 ring-1 ring-brand/40">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <h3 class="font-semibold">Child‑Safe & Protected</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-300">Low‑voltage contacts, reverse‑polarity & over‑current protection, status LEDs.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-slate-900 p-6 hover:border-brand/50 transition">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand/15 ring-1 ring-brand/40">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18M7 3v4M17 3v4M5 21h14l1-11H4l1 11Z"/></svg>
+            </span>
+            <h3 class="font-semibold">Indoor/Outdoor</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-300">Weather‑resistant hardware with drainage design for garages, patios, or playrooms.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-slate-900 p-6 hover:border-brand/50 transition">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand/15 ring-1 ring-brand/40">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 7h6M9 12h6M9 17h6"/></svg>
+            </span>
+            <h3 class="font-semibold">Quick Install</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-300">Typical setup in under 30 minutes. No vehicle rewiring for most models.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-slate-900 p-6 hover:border-brand/50 transition">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand/15 ring-1 ring-brand/40">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            </span>
+            <h3 class="font-semibold">Scales Up</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-300">Optional Pro version for scooters, yard tools, or commercial play spaces.</p>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <a href="#contact" class="inline-flex items-center gap-2 rounded-xl border border-brand/40 px-4 py-2 hover:bg-brand/10">See install options</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl sm:text-4xl font-bold">How it Works</h2>
+        <p class="mt-3 text-slate-300">From unbox to first charge in three simple steps.</p>
+      </div>
+      <div class="mt-12 grid gap-6 lg:grid-cols-3">
+        <div class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+          <div class="text-sm text-slate-400">Step 1</div>
+          <h3 class="mt-1 font-semibold text-lg">Place the Dock</h3>
+          <p class="mt-2 text-slate-300">Set the dock on a flat surface near a standard outlet. Plug in the included power unit.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+          <div class="text-sm text-slate-400">Step 2</div>
+          <h3 class="mt-1 font-semibold text-lg">Attach Contact Kit</h3>
+          <p class="mt-2 text-slate-300">For most cars, use the included contact bracket under the vehicle — no wiring changes required.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+          <div class="text-sm text-slate-400">Step 3</div>
+          <h3 class="mt-1 font-semibold text-lg">Park to Charge</h3>
+          <p class="mt-2 text-slate-300">LEDs confirm alignment and charging begins automatically. The dock stops when the battery is full.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery / Portfolio -->
+  <section id="portfolio" class="py-20 lg:py-24 border-y border-white/10 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-6 flex-wrap">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold">Gallery</h2>
+          <p class="mt-3 text-slate-300">A peek at prototypes, installs, and design concepts.</p>
+        </div>
+        <a href="#contact" class="inline-flex items-center gap-2 rounded-xl border border-white/10 px-4 py-2 hover:border-brand/60">Request a full portfolio</a>
+      </div>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="aspect-[4/3] rounded-xl bg-slate-800/60 border border-white/10"></div>
+        <div class="aspect-[4/3] rounded-xl bg-slate-800/60 border border-white/10"></div>
+        <div class="aspect-[4/3] rounded-xl bg-slate-800/60 border border-white/10"></div>
+        <div class="aspect-[4/3] rounded-xl bg-slate-800/60 border border-white/10"></div>
+        <div class="aspect-[4/3] rounded-xl bg-slate-800/60 border border-white/10"></div>
+        <div class="aspect-[4/3] rounded-xl bg-slate-800/60 border border-white/10"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl sm:text-4xl font-bold">Pricing</h2>
+        <p class="mt-3 text-slate-300">Starter options below. Custom packages available for unique vehicles and commercial spaces.</p>
+      </div>
+      <div class="mt-10 grid gap-6 lg:grid-cols-3">
+        <div class="rounded-2xl border border-white/10 bg-slate-900 p-6 flex flex-col">
+          <h3 class="text-xl font-semibold">Home Dock</h3>
+          <p class="mt-2 text-slate-300">For a single ride‑on car. Includes dock, contact kit, and power unit.</p>
+          <div class="mt-4 text-3xl font-extrabold">$249</div>
+          <ul class="mt-4 text-sm text-slate-300 space-y-2 list-disc list-inside">
+            <li>LED status + safety cutoffs</li>
+            <li>Indoor use (garage/playroom)</li>
+            <li>Install guide + support</li>
+          </ul>
+          <a href="#contact" class="mt-6 rounded-xl bg-brand px-4 py-2 font-semibold text-slate-950 text-center hover:bg-brand-light">Get Started</a>
+        </div>
+        <div class="rounded-2xl border border-brand/40 bg-slate-900 p-6 ring-1 ring-brand/30 flex flex-col">
+          <h3 class="text-xl font-semibold">Home Dock+</h3>
+          <p class="mt-2 text-slate-300">Adds weather‑resistant hardware for patios and tougher play.</p>
+          <div class="mt-4 text-3xl font-extrabold">$329</div>
+          <ul class="mt-4 text-sm text-slate-300 space-y-2 list-disc list-inside">
+            <li>Outdoor‑ready enclosure</li>
+            <li>Universal adapter plate</li>
+            <li>Phone support for setup</li>
+          </ul>
+          <a href="#contact" class="mt-6 rounded-xl bg-brand px-4 py-2 font-semibold text-slate-950 text-center hover:bg-brand-light">Request Quote</a>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-slate-900 p-6 flex flex-col">
+          <h3 class="text-xl font-semibold">Pro / Commercial</h3>
+          <p class="mt-2 text-slate-300">For schools, play centers, or fleets (scooters/carts).</p>
+          <div class="mt-4 text-3xl font-extrabold">Custom</div>
+          <ul class="mt-4 text-sm text-slate-300 space-y-2 list-disc list-inside">
+            <li>Multi‑dock systems</li>
+            <li>Maintenance & support</li>
+            <li>On‑site install</li>
+          </ul>
+          <a href="#contact" class="mt-6 rounded-xl bg-brand px-4 py-2 font-semibold text-slate-950 text-center hover:bg-brand-light">Talk to Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 lg:py-24 border-t border-white/10 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl sm:text-4xl font-bold">FAQ</h2>
+        <p class="mt-3 text-slate-300">Everything you want to know about AutoDock.</p>
+      </div>
+
+      <div class="mt-10 divide-y divide-white/10 rounded-2xl border border-white/10 bg-slate-900">
+        <!-- Item -->
+        <details class="group p-6" open>
+          <summary class="flex cursor-pointer list-none items-center justify-between">
+            <h3 class="font-semibold">Will AutoDock work with my child's car?</h3>
+            <span class="ml-4 transition group-open:rotate-45"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <p class="mt-3 text-slate-300">Most ride‑on cars are compatible using our universal contact bracket. We'll confirm fit during booking.</p>
+        </details>
+        <details class="group p-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between">
+            <h3 class="font-semibold">Is it safe?</h3>
+            <span class="ml-4 transition group-open:rotate-45"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <p class="mt-3 text-slate-300">Yes. The dock uses low voltage, current limiting, and polarity protection. Contacts are recessed and only live when a vehicle is docked.</p>
+        </details>
+        <details class="group p-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between">
+            <h3 class="font-semibold">Do you install it?</h3>
+            <span class="ml-4 transition group-open:rotate-45"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <p class="mt-3 text-slate-300">We offer install in NJ/NYC and ship DIY kits elsewhere. Typical install is under 30 minutes.</p>
+        </details>
+        <details class="group p-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between">
+            <h3 class="font-semibold">What about weather?</h3>
+            <span class="ml-4 transition group-open:rotate-45"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <p class="mt-3 text-slate-300">Home Dock is for covered spaces; Home Dock+ adds outdoor‑ready hardware. Pro systems can be fully weather‑sealed.</p>
+        </details>
+        <details class="group p-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between">
+            <h3 class="font-semibold">Can it charge other things?</h3>
+            <span class="ml-4 transition group-open:rotate-45"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <p class="mt-3 text-slate-300">Yes — we have adapters for scooters, small carts, and outdoor toys. Ask about Pro.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold">Get in Touch</h2>
+          <p class="mt-3 text-slate-300">Tell us about your vehicle and space. We'll confirm compatibility and send next steps.</p>
+          <div class="mt-6 space-y-3 text-slate-300">
+            <div class="flex items-center gap-3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M22 7l-10 6L2 7"/></svg><a class="hover:text-brand underline decoration-brand/70" href="mailto:hello@autodock.dev">hello@autodock.dev</a></div>
+            <div class="flex items-center gap-3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h18M3 12h18M3 19h18"/></svg><a class="hover:text-brand underline decoration-brand/70" href="#">Instagram</a> <span class="text-slate-500 text-sm">(add your handle)</span></div>
+          </div>
+          <div class="mt-8">
+            <a href="#" class="inline-flex items-center gap-2 rounded-xl bg-brand px-5 py-3 font-semibold text-slate-950 shadow hover:bg-brand-light">Book a demo</a>
+          </div>
+        </div>
+
+        <!-- Embed a Google Form (replace src with your form URL) -->
+        <div class="rounded-2xl border border-white/10 bg-slate-900 p-4">
+          <div class="text-sm text-slate-400 mb-2">Quick form</div>
+          <div class="aspect-[3/2] w-full">
+            <iframe class="w-full h-full rounded-xl" src="YOUR_GOOGLE_FORM_EMBED_URL" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="AutoDock Inquiry Form"></iframe>
+          </div>
+          <p class="text-xs text-slate-500 mt-2">Replace <span class="font-mono">YOUR_GOOGLE_FORM_EMBED_URL</span> with your actual Google Form embed link.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-slate-400 text-sm">© <span id="year"></span> AutoDock • Serving NJ/NYC</div>
+        <nav class="text-sm flex items-center gap-6">
+          <a class="hover:text-brand" href="#features">Features</a>
+          <a class="hover:text-brand" href="#pricing">Pricing</a>
+          <a class="hover:text-brand" href="#faq">FAQ</a>
+          <a class="hover:text-brand" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    menuBtn?.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
